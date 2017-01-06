@@ -1,4 +1,4 @@
-## react选择器
+## 移动端react选择器，支持拓展二级联动，三级联动
 
 ## Build Setup
 
