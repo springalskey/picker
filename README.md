@@ -1,3 +1,14 @@
 ## react选择器
 
-### 用最容易的方式写，方便大家代码复制，修改
+## Build Setup
+
+```
+# install dependencies
+npm install
+
+# run server
+npm start
+
+# build for production with minification
+npm run build
+```
