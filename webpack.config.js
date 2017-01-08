@@ -57,7 +57,7 @@ var config = {
   devServer: {
     port: port,
     host: ip.address(),
-    contentBase: "./app",
+    contentBase: "./src",
     historyApiFallback: true,
     compress: true,
     stats: 'minimal',
