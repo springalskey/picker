@@ -44,6 +44,7 @@ export default class PickerDemo extends React.Component {
   }
 
   handleChangeUser (data) {
+    data = data || {}
     this.userData.defaultValue = data;
     this.setState({defaultValue: data});
   }

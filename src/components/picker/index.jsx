@@ -82,11 +82,17 @@ class Picker extends React.Component {
 
   handleTouchStart (e) {
     e.preventDefault();
+    if (this.props.data.list.length <= 1) {
+      return;
+    }
     this.startY = e.nativeEvent.changedTouches[0].pageY;
   }
 
   handleTouchEnd (e) {
     e.preventDefault();
+    if (this.props.data.list.length <= 1) {
+      return;
+    }
     this.endY = e.nativeEvent.changedTouches[0].pageY;
     // 实际滚动距离
     let v = parseInt(this.endY - this.startY);
@@ -123,6 +129,9 @@ class Picker extends React.Component {
 
   handleTouchMove (e) {
     e.preventDefault();
+    if (this.props.data.list.length <= 1) {
+      return;
+    }
     const pageY = e.nativeEvent.changedTouches[0].pageY;
     let value = parseInt(pageY - this.startY);
     const y = this.currentY + value;
