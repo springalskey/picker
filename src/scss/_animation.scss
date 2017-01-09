@@ -19,6 +19,10 @@
   @include commonAnimation;
 }
 
+.fadeIn {
+  @include fadeIn;
+}
+
 //////////fadeOut////////////
 
 @keyframes fadeOut {
@@ -32,6 +36,10 @@
 @mixin fadeOut {
   animation-name: fadeOut;
   @include commonAnimation;
+}
+
+.fadeOut {
+  @include fadeOut;
 }
 
 //////////transitionBottomToUp////////////

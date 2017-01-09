@@ -20,9 +20,11 @@ class BaseModal extends React.Component {
     let modal = null;
     if (this.props.visible) {
       modal =(
-        <div className="modal"
-          onClick={this.handleClick.bind(this)}>
-          {this.props.children}
+        <div className="modal-overlay">
+          <div className="modal"
+            onClick={this.handleClick.bind(this)}>
+            {this.props.children}
+          </div>
         </div>
       );
     }
