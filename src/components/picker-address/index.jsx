@@ -16,8 +16,6 @@ class PickerAddress extends React.Component {
     super();
     this.props = props;
     this.address = [];
-    // 初始化数据
-    this.initDefaultData();
   }
 
   initDefaultData () {
