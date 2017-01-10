@@ -1,5 +1,6 @@
 import React from 'react';
-import { PickerAddress, Picker, Popup} from '../../components';
+import { Picker, Popup} from '../../components';
+import { PickerAddress } from '../../components-ext';
 import './index.scss';
 
 export default class PickerDemo extends React.Component {
@@ -33,7 +34,7 @@ export default class PickerDemo extends React.Component {
       displayValue (item) {
         return item.name;
       }
-    }
+    };
 
   }
 

@@ -1,11 +1,11 @@
 {
   "name": "spring-picker",
-  "version": "0.1.3",
+  "version": "0.1.5",
   "description": "react picker",
   "scripts": {
     "start": "NODE_ENV=dev webpack-dev-server --inline",
     "build": "rm -rf build && NODE_ENV=production webpack -p --progress",
-    "prepublish": "rm -rf lib && babel src --out-dir lib --source-maps --extensions .jsx,.js --copy-files"
+    "prepublish": "rm -rf lib && babel src/components --out-dir lib --source-maps --extensions .jsx,.js --copy-files"
   },
   "babel": {
     "presets": ["es2015"]
@@ -58,6 +58,6 @@
   "bugs": {
     "url": "https://github.com/springalskey/picker/issues"
   },
-  "main": "lib/components/index.js",
+  "main": "lib/index.js",
   "author": "springalskey"
 }

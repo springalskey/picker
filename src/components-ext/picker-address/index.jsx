@@ -1,6 +1,5 @@
 import React from 'react';
-import Picker from '../picker';
-import Popup from '../popup';
+import { Picker, Popup } from '../../components';
 import { provins, citys, areas } from './address';
 import './index.scss';
 
