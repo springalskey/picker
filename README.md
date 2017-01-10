@@ -4,19 +4,19 @@
 ## How to use
 
 ```
-  $ npm install spring-picker -S
-  
+$ npm install spring-picker -S
 
-  import { Picker, Popup } from 'spring-picker';
 
-  <Popup
-    onClose={this.closeUserPicker.bind(this)}
-    visible={this.state.userPickerVisible}>
-    <Picker
-      onChange={this.handleChangeUser.bind(this)}
-      data={this.userData}
-    />
-  </Popup>
+import { Picker, Popup } from 'spring-picker';
+
+<Popup
+  onClose={this.closeUserPicker.bind(this)}
+  visible={this.state.userPickerVisible}>
+  <Picker
+    onChange={this.handleChangeUser.bind(this)}
+    data={this.userData}
+  />
+</Popup>
 
 ```
 
