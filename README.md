@@ -1,6 +1,26 @@
 ## 移动端react选择器，支持拓展二级联动，三级联动
 
-## Build Setup
+
+## How to use
+
+```
+  $ npm install spring-picker -S
+  
+
+  import { Picker, Popup } from 'spring-picker';
+
+  <Popup
+    onClose={this.closeUserPicker.bind(this)}
+    visible={this.state.userPickerVisible}>
+    <Picker
+      onChange={this.handleChangeUser.bind(this)}
+      data={this.userData}
+    />
+  </Popup>
+
+```
+
+## How to run this project
 
 ```
 # install dependencies
@@ -14,9 +34,9 @@ npm run build
 
 ```
 
-## 项目示例1
+## example1
 ![image](https://github.com/springalskey/picker/blob/master/src/assets/demo1.jpeg)
 
-## 项目示例2
+## example2
 ![image](https://github.com/springalskey/picker/blob/master/src/assets/demo2.jpeg)
 
