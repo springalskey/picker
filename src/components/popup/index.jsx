@@ -9,6 +9,7 @@ class Popup extends React.Component {
   }
 
   handleClose() {
+    document.body.style.cssText = '';
     if (this.props.onClose) {
       this.props.onClose();
     }

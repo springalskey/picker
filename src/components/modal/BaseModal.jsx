@@ -19,7 +19,7 @@ class BaseModal extends React.Component {
   render () {
     let modal = null;
     if (this.props.visible) {
-      modal =(
+      modal = (
         <div className="modal-overlay">
           <div className="modal"
             onClick={this.handleClick.bind(this)}>
@@ -27,6 +27,9 @@ class BaseModal extends React.Component {
           </div>
         </div>
       );
+      // 当关闭modal时，不要忘记设置 css = '';
+      const css = 'overflow:hidden; position:fixed; left:0; top:0; bottom:0;';
+      document.body.style.cssText = css;
     }
     return (
       <ReactCSSTransitionGroup
