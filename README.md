@@ -36,8 +36,8 @@ npm run build
 ```
 
 ## example1
-![image](https://github.com/springalskey/picker/blob/master/src/assets/demo1.jpeg)
+![image](https://github.com/springalskey/picker/blob/master/src/assets/demo1.png)
 
 ## example2
-![image](https://github.com/springalskey/picker/blob/master/src/assets/demo2.jpeg)
+![image](https://github.com/springalskey/picker/blob/master/src/assets/demo2.png)
 
