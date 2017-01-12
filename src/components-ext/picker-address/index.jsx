@@ -5,7 +5,8 @@ import './index.scss';
 
 const propTypes = {
   defaultValue: React.PropTypes.array.isRequired,
-  onClose: React.PropTypes.func.isRequired,
+  onConfirm: React.PropTypes.func.isRequired,
+  onCancel: React.PropTypes.func.isRequired,
   onChange: React.PropTypes.func.isRequired,
   visible: React.PropTypes.bool.isRequired,
 }
@@ -79,14 +80,19 @@ class PickerAddress extends React.Component {
   }
 
   handleClose () {
-    this.props.onClose(this.address)
+    this.props.onConfirm(this.address)
+  }
+
+  handleCancel () {
+    this.props.onCancel()
   }
 
   render () {
     this.initDefaultData();
     return <div className="ui-picker-address">
       <Popup
-        onClose={this.handleClose.bind(this)}
+        onConfirm={this.handleClose.bind(this)}
+        onCancel={this.handleCancel.bind(this)}
         visible={this.props.visible}>
         <Picker
           onChange={this.handleChangeProvin.bind(this)}

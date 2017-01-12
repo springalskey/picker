@@ -10,7 +10,8 @@ import 'spring-picker/lib/style.css';
 import { Picker, Popup } from 'spring-picker';
 
 <Popup
-  onClose={this.closeUserPicker.bind(this)}
+  onCancel={this.cancelUserPicker.bind(this)}
+  onConfirm={this.closeUserPicker.bind(this)}
   visible={this.state.userPickerVisible}>
   <Picker
     onChange={this.handleChangeUser.bind(this)}

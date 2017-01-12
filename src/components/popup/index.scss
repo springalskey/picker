@@ -6,7 +6,13 @@
   padding: 0 10px;
   line-height: 44px;
 
-  > span {
+  > span:first-child {
+    display: inline-block;
+    float: left;
+    color: #007aff;
+  }
+
+  > span:last-child {
     display: inline-block;
     float: right;
     color: #007aff;

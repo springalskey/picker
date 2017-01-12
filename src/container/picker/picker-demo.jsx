@@ -8,16 +8,17 @@ export default class PickerDemo extends React.Component {
   constructor() {
     super();
 
+    this.defaultAddress = ['湖南省','长沙市','开福区'];
     this.state = {
       userPickerVisible: false,
       addressPickerVisible: false,
       defaultValue: {name: 'Lincal', value: 5},
-      address: ['湖南省','长沙市','开福区'],
+      address: this.defaultAddress,
     };
 
     this.userData =  {
       list: [
-        {name: '杜宝坤', value: 0},
+        {name: '杜保坤', value: 0},
         {name: '况宏瑞', value: 1},
         {name: '盘维', value: 2},
         {name: '杨泉', value: 3},
@@ -54,6 +55,14 @@ export default class PickerDemo extends React.Component {
     this.setState({userPickerVisible: false});
   }
 
+  cancelUserPicker () {
+    this.userData.defaultValue = {};
+    this.setState({
+      userPickerVisible: false,
+      defaultValue: {}
+    });
+  }
+
   // 地址选择
   showAddressPicker (e) {
     e.nativeEvent.stopImmediatePropagation();
@@ -71,6 +80,13 @@ export default class PickerDemo extends React.Component {
     });
   }
 
+  cancelAddressPicker () {
+    this.setState({
+      address: this.defaultAddress,
+      addressPickerVisible: false,
+    });
+  }
+
   render() {
     return (
       <div className = "picker-demo">
@@ -79,7 +95,8 @@ export default class PickerDemo extends React.Component {
         </div>
         <div className="single-picker">
           <Popup
-            onClose={this.closeUserPicker.bind(this)}
+            onCancel={this.cancelUserPicker.bind(this)}
+            onConfirm={this.closeUserPicker.bind(this)}
             visible={this.state.userPickerVisible}>
             <Picker
               onChange={this.handleChangeUser.bind(this)}
@@ -90,7 +107,8 @@ export default class PickerDemo extends React.Component {
 
         <PickerAddress
           defaultValue={this.state.address}
-          onClose={this.closeAddressPicker.bind(this)}
+          onCancel={this.cancelAddressPicker.bind(this)}
+          onConfirm={this.closeAddressPicker.bind(this)}
           visible={this.state.addressPickerVisible}
           onChange={this.handleChangeAddress.bind(this)}>
         </PickerAddress>
