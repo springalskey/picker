@@ -29,8 +29,8 @@ class Popup extends React.Component {
 
   render () {
     const isZh = !navigator.language || 
-                  navigator.language === 'zh-CN' || 
-                  navigator.language === 'zh';
+                  navigator.language.toLowerCase() === 'zh-cn' || 
+                  navigator.language.toLowerCase() === 'zh';
     let text1 = !isZh ? 'Cancel' : '取消';
     let text2 = !isZh ? 'Finish' : '完成';
     return (
