@@ -1,6 +1,5 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import './BaseModal.scss';
 import ReactCSSTransitionGroup from 'react-addons-css-transition-group';
 
 const propTypes = {

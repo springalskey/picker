@@ -1,7 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import _ from 'lodash';
-import './index.scss';
 
 const getIndex = (list, item) => {
   if (list && list.length < 1) {
