@@ -6,7 +6,7 @@
 ```
 $ npm install spring-picker -S
 
-
+import 'spring-picker/lib/style.css';
 import { Picker, Popup } from 'spring-picker';
 
 <Popup
