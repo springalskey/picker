@@ -7,6 +7,7 @@ $itemHeight: 36px;
   position: relative;
   pointer-events: auto;
   margin-top: 18px;
+  touch-action: none; 
 
   .ui-picker {
     width: 100%;
