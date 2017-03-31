@@ -14,14 +14,12 @@ class Popup extends React.Component {
   }
 
   handleCancel () {
-    document.body.style.cssText = '';
     if (this.props.onCancel) {
       this.props.onCancel();
     }
   }
 
   handleConfirm() {
-    document.body.style.cssText = '';
     if (this.props.onConfirm) {
       this.props.onConfirm();
     }

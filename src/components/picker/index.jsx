@@ -181,12 +181,16 @@ class Picker extends React.Component {
     this.setSelectedValue(this.selectedIndex);
   }
 
+  handleWrapperStart (e) {
+    e.preventDefault();
+  }
+
   render () {
     const style = {
       transform: this.getInitialStyle()
     }
     return (
-      <div className="ui-picker-wrapper">
+      <div className="ui-picker-wrapper" onTouchStart={this.handleWrapperStart.bind(this)}>
           <div className="ui-picker"
             style = {this.state.style.transform ? this.state.style : style}
             onTouchStart={this.handleTouchStart.bind(this)}
