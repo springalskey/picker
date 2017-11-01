@@ -1,5 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import PropTypes from 'prop-types';
 import _ from 'lodash';
 
 const getIndex = (list, item) => {
@@ -50,11 +51,11 @@ class Picker extends React.Component {
       this._defaultValue = nextProps.data.defaultValue;
       this.selectedIndex = this.getReceivePropsIndex(nextProps.data);
       if (this.selectedIndex === 0) {
-        this.state = {
+        this.setState({
           style: {
             transform: `translate3d(0px, ${this.itemHeight * 2}px, 0px)`
           }
-        }
+        })
       }
     }
   }
@@ -214,9 +215,9 @@ class Picker extends React.Component {
 
 Picker.propTypes = {
   // 数据源
-  data: React.PropTypes.object.isRequired,
+  data: PropTypes.object.isRequired,
   // 当停止滑动选中立即回调onchange方法
-  onChange: React.PropTypes.func.isRequired,
+  onChange: PropTypes.func.isRequired,
 };
 
 export default Picker;

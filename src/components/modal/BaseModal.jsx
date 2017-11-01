@@ -1,10 +1,11 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import ReactCSSTransitionGroup from 'react-addons-css-transition-group';
+import PropTypes from 'prop-types';
 
 const propTypes = {
-  visible: React.PropTypes.bool.isRequired,
-  onCancel: React.PropTypes.func,
+  visible: PropTypes.bool.isRequired,
+  onCancel: PropTypes.func,
 }
 
 class BaseModal extends React.Component {
@@ -31,8 +32,9 @@ class BaseModal extends React.Component {
     let modal = null;
     if (this.props.visible) {
       modal = (
-        <div className="modal-overlay" ref="modalOverlay">
-          <div className="modal" ref="modal">
+        <div className="modal-overlay" 
+          ref={(modalOverlay) => { this.modalOverlay = modalOverlay;}}>
+          <div className="modal" ref={(modal) => { this.modal = modal;}}>
             {this.props.children}
           </div>
         </div>

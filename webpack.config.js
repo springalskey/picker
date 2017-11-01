@@ -4,10 +4,8 @@ var ExtractTextPlugin = require('extract-text-webpack-plugin');
 var CopyWebpackPlugin = require('copy-webpack-plugin');
 
 var isProd = process.env.NODE_ENV === 'production';
+var cssLoader = isProd ? ExtractTextPlugin.extract('css-loader') : ['style-loader', 'css-loader', 'sass-loader'];
 
-var cssLoader = isProd
-  ? ExtractTextPlugin.extract('css!sass')
-  : 'style!css?sourceMap!sass?sourceMap'
 
 var path = require('path');
 var https = require('https');
@@ -28,7 +26,7 @@ var config = {
   },
 
   resolve: {
-    extensions: ['', '.js', '.jsx']
+    extensions: ['*', '.js', '.jsx']
   },
 
   plugins: [
@@ -44,7 +42,7 @@ var config = {
       loader: 'babel-loader',
       exclude: /node_modules/,
       query: {
-        presets: ['es2015', 'react', 'stage-1'],
+        presets: ['es2015', 'react', 'stage-3'],
       }
     },
     { test: /\.(scss|css)$/, loader: cssLoader },

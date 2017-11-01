@@ -1,14 +1,15 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import { Picker, Popup } from '../../components';
 import { provins, citys, areas } from './address';
 import './index.scss';
 
 const propTypes = {
-  defaultValue: React.PropTypes.array.isRequired,
-  onConfirm: React.PropTypes.func.isRequired,
-  onCancel: React.PropTypes.func.isRequired,
-  onChange: React.PropTypes.func.isRequired,
-  visible: React.PropTypes.bool.isRequired,
+  defaultValue: PropTypes.array.isRequired,
+  onConfirm: PropTypes.func.isRequired,
+  onCancel: PropTypes.func.isRequired,
+  onChange: PropTypes.func.isRequired,
+  visible: PropTypes.bool.isRequired,
 }
 
 class PickerAddress extends React.Component {
