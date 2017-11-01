@@ -16,14 +16,6 @@ export default class Home extends React.Component {
             </Link>
           </div>
         </div>
-
-        <div className="list">
-          <div className="item">
-            <Link className="item-label" to="/modal-demo">
-              modal demo
-            </Link>
-          </div>
-        </div>
       </div>
     )
   }
