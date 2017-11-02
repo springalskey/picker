@@ -1,0 +1,147 @@
+@mixin commonAnimation {
+  animation-duration: 0.24s;
+  -webkit-animation-duration: 0.24s;
+  animation-fill-mode: both;
+  -webkit-animation-fill-mode: both;
+  animation-timing-function: ease-in-out;
+  -webkit-animation-timing-function: ease-in-out;
+}
+
+//////////fadeIn////////////
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+@-webkit-keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+@mixin fadeIn {
+  animation-name: fadeIn;
+  -webkit-animation-name: fadeIn;
+  @include commonAnimation;
+}
+
+.fadeIn {
+  @include fadeIn;
+}
+
+//////////fadeOut////////////
+
+@keyframes fadeOut {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+@-webkit-keyframes fadeOut {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+@mixin fadeOut {
+  animation-name: fadeOut;
+  -webkit-animation-name: fadeOut;
+  @include commonAnimation;
+}
+
+.fadeOut {
+  @include fadeOut;
+}
+
+//////////transitionBottomToUp////////////
+
+@mixin keyframes ($name,$height) {
+  @keyframes transitionBottomToUp-#{$name} {
+    0% {
+      -webkit-transform: translate3d(0, 100%, 0);
+      transform: translate3d(0, 100%, 0);
+    }
+    100% {
+      -webkit-transform: translate3d(0, $height, 0);
+      transform: translate3d(0, $height, 0);
+    }
+  }
+  @-webkit-keyframes transitionBottomToUp-#{$name} {
+    0% {
+      -webkit-transform: translate3d(0, 100%, 0);
+      transform: translate3d(0, 100%, 0);
+    }
+    100% {
+      -webkit-transform: translate3d(0, $height, 0);
+      transform: translate3d(0, $height, 0);
+    }
+  }
+}
+
+@mixin transitionBottomToUp($name) {
+  -webkit-animation-name: transitionBottomToUp-#{$name};
+  animation-name: transitionBottomToUp-#{$name};
+  @include commonAnimation;
+  animation-duration: 0.2s;
+  -webkit-animation-duration: 0.2s;
+}
+
+// 由下至上的动画，$name：动画名称后缀；$to：从底部到to位置的过度
+@mixin transitionBottomToUpFn ($name, $to) {
+  @include transitionBottomToUp($name);
+  @include keyframes ($name,$to);
+}
+
+//////////transitionUpToBottom////////////
+
+@mixin keyframesUpToBottom ($name,$height) {
+  @keyframes transitionUpToBottom-#{$name} {
+    0% {
+      top: $height;
+      -webkit-transform: translate3d(0, $height, 0);
+      transform: translate3d(0, $height, 0);
+    }
+    100% {
+      top: 100%;
+      -webkit-transform: translate3d(0, 100%, 0);
+      transform: translate3d(0, 100%, 0);
+    }
+  }
+  @-webkit-keyframes transitionUpToBottom-#{$name} {
+    0% {
+      top: $height;
+      -webkit-transform: translate3d(0, $height, 0);
+      transform: translate3d(0, $height, 0);
+    }
+    100% {
+      top: 100%;
+      -webkit-transform: translate3d(0, 100%, 0);
+      transform: translate3d(0, 100%, 0);
+    }
+  }
+}
+
+@mixin transitionUpToBottom($name) {
+  animation-name: transitionUpToBottom-#{$name};
+  -webkit-animation-name: transitionUpToBottom-#{$name};
+  @include commonAnimation;
+  animation-duration: 0.2s;
+  -webkit-animation-duration: 0.2s;
+}
+
+// 由上至下的动画，$name：动画名称后缀；$to：从to位置到底部的过度
+@mixin transitionUpToBottomFn ($name, $to) {
+  @include transitionUpToBottom($name);
+  @include keyframesUpToBottom ($name,$to);
+}
+

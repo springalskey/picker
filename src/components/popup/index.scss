@@ -1,0 +1,28 @@
+
+.ui-popup-title {
+  height: 44px;
+  font-size: 17px;
+  background: #ccc;
+  padding: 0 10px;
+  line-height: 44px;
+
+  > span:first-child {
+    display: inline-block;
+    float: left;
+    color: #007aff;
+  }
+
+  > span:last-child {
+    display: inline-block;
+    float: right;
+    color: #007aff;
+  }
+}
+
+.ui-popup-content {
+  height: 216px;
+  width: 100%;
+  overflow: hidden;
+  -webkit-overflow-scrolling : touch;
+}
+

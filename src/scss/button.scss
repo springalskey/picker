@@ -1,0 +1,65 @@
+
+$height: 30px;
+
+.button {
+  border-style: none;
+  width: auto;
+  overflow: visible;
+  text-align: center;
+  outline: none;
+  background-color: #eee;
+  border-radius: 5px;
+  margin: auto;
+}
+
+.button-primary {
+  width: 200px;
+  height: $height;
+  color: #fff;
+  background-color: #5bc0de;
+  border-color: #46b8da;
+}
+
+.button-large {
+  width: 80%;
+  height: $height;
+  color: #fff;
+  background-color: #f0ad4e;
+  border-color: #eea236;
+}
+
+.button-small {
+  width: 66px;
+  height: $height;
+  color: #333;
+  background-color: #fff;
+  border-color: #ccc;
+}
+
+.btn {
+  display: inline-block;
+  margin-bottom: 0;
+  font-size: 14px;
+  text-align: center;
+  white-space: nowrap;
+  vertical-align: middle;
+  -ms-touch-action: manipulation;
+  touch-action: manipulation;
+  cursor: pointer;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  background-image: none;
+  border: 1px solid transparent;
+  border-radius: 4px;
+  font-family: inherit;
+  text-transform: none;
+  outline: none;
+}
+
+.btn:focus, .btn:hover {
+  color: #fff;
+  background-color: #31b0d5;
+  border-color: #269abc;
+}
