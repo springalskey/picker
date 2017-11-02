@@ -1,7 +1,7 @@
 import 'babel-polyfill';
 import React from 'react';
 import {render} from 'react-dom';
-import {BrowserRouter,Route} from 'react-router-dom';
+import {BrowserRouter,HashRouter,Route} from 'react-router-dom';
 
 import Layout from './container/layout';
 import HomeRoute from './container/home';
@@ -11,12 +11,12 @@ import './scss/index.scss';
 
 
 render(
-  <BrowserRouter>
+  <HashRouter>
         <Layout>
             <Route exact path="/" component={HomeRoute}></Route>
             <Route path="/picker-demo" component={PickerRoute}></Route>
         </Layout>
-  </BrowserRouter>,
+  </HashRouter>,
   document.getElementById('app')
 );
 
