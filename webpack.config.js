@@ -40,10 +40,7 @@ var config = {
     loaders: [{
       test: /\.jsx?$/,
       loader: 'babel-loader',
-      exclude: /node_modules/,
-      query: {
-        presets: ['es2015', 'react', 'stage-3'],
-      }
+      exclude: /node_modules/
     },
     { test: /\.(scss|css)$/, loader: cssLoader },
     {
