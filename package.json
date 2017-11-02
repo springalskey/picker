@@ -7,7 +7,8 @@
     "build": "rimraf build && cross-env NODE_ENV=production webpack -p --progress",
     "build-js": "babel src/components --out-dir lib --source-maps --extensions .jsx,.js --copy-files",
     "build-css": "node-sass src/components/scss/index.scss lib/style.css",
-    "prepublish": "rimraf lib && npm run build-css && npm run build-js "
+    "prepublish": "rimraf lib && npm run build-css && npm run build-js",
+    "gh-pages": "node_modules/.bin/gh-pages -d build"
   },
   "babel": {
     "presets": [
@@ -39,6 +40,7 @@
     "css-loader": "^0.28.7",
     "extract-text-webpack-plugin": "^3.0.2",
     "file-loader": "^1.1.5",
+    "gh-pages": "^1.0.0",
     "html-webpack-plugin": "^2.30.1",
     "ip": "^1.1.5",
     "node-sass": "^4.5.3",
