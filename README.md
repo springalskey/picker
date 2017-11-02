@@ -37,7 +37,7 @@ npm run build
 
 # preview
 Chrome打开开发者工具，切换到手机模拟器预览  
-[https://springalskey.github.io/picker/index.html#/](https://springalskey.github.io/picker/index.html#/)
+[https://springalskey.github.io/picker/index.html#/picker-demo](https://springalskey.github.io/picker/index.html#/picker-demo)
 
 ## example1
 ![image](https://github.com/springalskey/picker/blob/master/src/assets/demo1.png)
