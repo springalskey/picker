@@ -4,7 +4,7 @@ var ExtractTextPlugin = require('extract-text-webpack-plugin');
 var CopyWebpackPlugin = require('copy-webpack-plugin');
 
 var isProd = process.env.NODE_ENV === 'production';
-var cssLoader = isProd ? ExtractTextPlugin.extract('css-loader') : ['style-loader', 'css-loader', 'sass-loader'];
+var cssLoader = isProd ? ExtractTextPlugin.extract('css-loader!sass-loader') : ['style-loader', 'css-loader', 'sass-loader'];
 
 
 var path = require('path');
@@ -60,13 +60,9 @@ var config = {
 };
 
 if (isProd) {
+  config.devtool = '#source-map';
   config.plugins.push(
-    new webpack.optimize.UglifyJsPlugin({
-      compress: {
-        warnings: false
-      }
-    }),
-    new webpack.optimize.DedupePlugin(),
+   
     new ExtractTextPlugin('app.[hash:8].css', {allChunks: true})
   );
 }
