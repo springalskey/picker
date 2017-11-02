@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "description": "react picker",
   "scripts": {
-    "start": "cross-env NODE_ENV=dev webpack-dev-server --inline",
+    "start": "cross-env NODE_ENV=dev webpack-dev-server --inline --progress",
     "build": "rimraf build && cross-env NODE_ENV=production webpack -p --progress",
     "build-js": "babel src/components --out-dir lib --source-maps --extensions .jsx,.js --copy-files",
     "build-css": "node-sass src/components/scss/index.scss lib/style.css",
@@ -50,7 +50,7 @@
     "style-loader": "^0.19.0",
     "url-loader": "^0.6.2",
     "webpack": "^3.8.1",
-    "webpack-dev-server": "^2.9.3"
+    "webpack-dev-server": "^1.16.5"
   },
   "bugs": {
     "url": "https://github.com/springalskey/picker/issues"
