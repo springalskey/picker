@@ -1,7 +1,9 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import { Picker, Popup } from '../../components'
-import { PROVINS, CITYS, AREAS } from './utils'
+import  provins from './utils/provins.json'
+import  citys  from './utils/citys.json'
+import  areas from './utils/areas.json'
 import './index.scss'
 
 class PickerAddress extends React.Component {
@@ -10,21 +12,21 @@ class PickerAddress extends React.Component {
     this.address = []
     this.state = {
       provins: {
-        list: PROVINS,
+        list: provins,
         defaultValue: props.defaultValue[0],
         displayValue: name => {
           return name
         }
       },
       citys: {
-        list: CITYS[props.defaultValue[0]],
+        list: citys[props.defaultValue[0]],
         defaultValue: props.defaultValue[1],
         displayValue: name => {
           return name
         }
       },
       areas: {
-        list: AREAS[props.defaultValue[1]],
+        list: areas[props.defaultValue[1]],
         defaultValue: props.defaultValue[2],
         displayValue: name => {
           return name
