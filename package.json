@@ -24,8 +24,8 @@
   "dependencies": {
     "lodash": "^4.17.4",
     "react": "^16.0.0",
-    "react-addons-css-transition-group": "^15.6.2",
-    "react-dom": "^16.0.0"
+    "react-dom": "^16.0.0",
+    "react-transition-group": "^2.2.1"
   },
   "devDependencies": {
     "babel-cli": "^6.26.0",

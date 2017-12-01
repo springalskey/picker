@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import ReactCSSTransitionGroup from 'react-addons-css-transition-group';
+import { CSSTransition } from 'react-transition-group';
 import PropTypes from 'prop-types';
 
 const propTypes = {
@@ -29,7 +29,7 @@ class BaseModal extends React.Component {
   }
 
   render () {
-    let modal = null;
+    let modal = <span></span>;
     if (this.props.visible) {
       modal = (
         <div className="modal-overlay" 
@@ -41,12 +41,9 @@ class BaseModal extends React.Component {
       );
     }
     return (
-      <ReactCSSTransitionGroup
-        transitionName="modal-transition"
-        transitionEnterTimeout={240}
-        transitionLeaveTimeout={240}>
-        { modal }
-      </ReactCSSTransitionGroup>
+      <CSSTransition classNames="modal-transition" timeout={240} in={true}>
+         {modal}
+      </CSSTransition>
     );
   }
 }
